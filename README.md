@@ -1,1 +1,11 @@
-My Mira updated: Supabase auth/cloud sync and week/month calendar. Upload all files in this folder to your GitHub repository root and commit. config.js contains only the project URL and publishable key; never add secret/service-role keys. Sync requires your existing mira_* tables and RLS policies.
+# My Mira — local-only planner
+
+This version removes Supabase, sign-in, and cloud sync. Tasks, prayer check-ins, and reflections are saved in this browser's local storage. They do not automatically sync between devices.
+
+## GitHub Pages update
+1. Download and extract this ZIP.
+2. Upload the *contents* of the `my_mira_local_only` folder to the root of your existing repository, replacing matching files.
+3. Commit the changes and wait for GitHub Pages to deploy.
+4. On desktop, open the website and press Ctrl+Shift+R.
+
+Do not clear browser site data if you want to preserve tasks already saved in that browser. This update does not intentionally clear local storage.

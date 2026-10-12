@@ -6,15 +6,14 @@
 <meta name="theme-color" content="#183f35">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="Daily Space">
+<meta name="apple-mobile-web-app-title" content="My Mira">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" href="icon.svg">
 <link rel="stylesheet" href="styles.css">
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<title>My Daily Space</title>
+<title>My Mira</title>
 </head>
 <body>
-<div class="app-shell"><section class="panel auth-panel"><div class="section-heading compact"><div><p class="eyebrow">YOUR PRIVATE SPACE</p><h2>Sync My Mira</h2><p class="sub">Sign in on each device to sync tasks, prayers and reflections.</p></div><span class="pill" id="syncStatus">Local only</span></div><div id="signedOutControls"><label for="authEmail">Email</label><input id="authEmail" type="email" autocomplete="email" placeholder="you@example.com"><label for="authPassword">Password</label><input id="authPassword" type="password" autocomplete="current-password" placeholder="At least 8 characters"><div class="auth-actions"><button id="signInBtn" class="primary-button">Sign in</button><button id="signUpBtn" class="secondary-button">Create account</button></div><p class="small-note">Use the same account on both devices. Confirm your email if prompted.</p></div><div id="signedInControls" class="hidden"><p id="signedInAs" class="sub"></p><div class="auth-actions"><button id="syncNowBtn" class="primary-button">Sync now</button><button id="signOutBtn" class="secondary-button">Sign out</button></div></div><p id="authMessage" class="auth-message" role="status"></p></section>
+<div class="app-shell">
   <header class="topbar">
     <div><p class="eyebrow" id="dateLabel">YOUR PERSONAL PLANNER</p><h1>My daily space<span>·</span></h1><p class="sub">A little progress, every day.</p></div>
     <button id="installHelp" class="icon-button" aria-label="Install app" title="Install app">＋</button>
@@ -72,7 +71,6 @@
   </form>
 </dialog>
 <div id="toast" class="toast" role="status"></div>
-<script src="config.js"></script>
 <script src="app.js"></script>
 </body>
 </html>
