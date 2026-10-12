@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#183f35">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Daily Space">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icon.svg">
+<link rel="stylesheet" href="styles.css">
+<title>My Daily Space</title>
+</head>
+<body>
+<div class="app-shell">
+  <header class="topbar">
+    <div><p class="eyebrow" id="dateLabel">YOUR PERSONAL PLANNER</p><h1>My daily space<span>·</span></h1><p class="sub">A little progress, every day.</p></div>
+    <button id="installHelp" class="icon-button" aria-label="Install app" title="Install app">＋</button>
+  </header>
+
+  <section class="stats-grid" aria-label="Progress summary">
+    <article class="stat-card"><span class="stat-icon">✓</span><strong id="taskStat">0/0</strong><span>Tasks done today</span></article>
+    <article class="stat-card"><span class="stat-icon">☾</span><strong id="prayerStat">0/5</strong><span>Prayers checked</span></article>
+    <article class="stat-card"><span class="stat-icon">↗</span><strong id="scoreStat">0%</strong><span>Today's progress</span></article>
+  </section>
+
+  <nav class="tabs" aria-label="Main navigation">
+    <button class="tab active" data-view="today">Today</button>
+    <button class="tab" data-view="calendar">Calendar</button>
+    <button class="tab" data-view="week">Weekly review</button>
+  </nav>
+
+  <main>
+    <section id="todayView" class="view">
+      <div class="section-heading"><div><p class="eyebrow">YOUR PLAN</p><h2 id="todayHeading">Today's priorities</h2></div><button id="addTaskBtn" class="primary-button">＋ Add task</button></div>
+      <div id="todayTasks" class="task-list"></div>
+
+      <section class="panel prayer-panel">
+        <div class="section-heading compact"><div><p class="eyebrow">DAILY PRACTICE</p><h2>Five daily prayers</h2><p class="sub">A gentle check-in for your salah.</p></div><span id="prayerPill" class="pill">0 of 5</span></div>
+        <div id="prayerList" class="prayer-list"></div>
+        <p class="small-note">Prayer times vary by location and calculation method. This version is a checklist and does not yet calculate or notify prayer times.</p>
+      </section>
+    </section>
+
+    <section id="calendarView" class="view hidden">
+      <div class="section-heading"><div><p class="eyebrow">PLAN AHEAD</p><h2>Weekly calendar</h2><p id="weekRange" class="sub"></p></div><button id="calendarAddBtn" class="primary-button">＋ Add task</button></div>
+      <div class="week-strip" id="weekStrip"></div>
+      <div class="calendar-day-heading"><h3 id="calendarDayTitle"></h3><span id="calendarDayCount" class="pill"></span></div>
+      <div id="calendarTasks" class="task-list"></div>
+    </section>
+
+    <section id="weekView" class="view hidden">
+      <div class="section-heading"><div><p class="eyebrow">LOOK BACK, MOVE FORWARD</p><h2>Weekly review</h2><p id="reviewRange" class="sub"></p></div></div>
+      <div class="panel review-score"><div><span class="muted">Task completion</span><strong id="weekScore">0%</strong><span id="weekTaskCount" class="muted">0 of 0 tasks</span></div><div class="progress-ring" id="progressRing"><span id="ringLabel">0%</span></div></div>
+      <div class="review-grid"><article class="panel mini-stat"><span class="muted">Tasks completed</span><strong id="weekTasksDone">0</strong></article><article class="panel mini-stat"><span class="muted">Prayer check-ins</span><strong id="weekPrayersDone">0/35</strong></article><article class="panel mini-stat"><span class="muted">Best day</span><strong id="bestDay">—</strong></article></div>
+      <div class="panel"><h3>Daily consistency</h3><div id="weekBars" class="week-bars"></div></div>
+      <div class="panel reflection"><label for="reflection">Weekly reflection</label><p class="sub">What went well? What would you like to improve?</p><textarea id="reflection" rows="4" placeholder="Write a few thoughts for your future self…"></textarea><button id="saveReflection" class="primary-button">Save reflection</button><span id="reflectionSaved" class="muted" role="status"></span></div>
+      <button id="exportBtn" class="secondary-button full-width">Export my weekly report</button>
+    </section>
+  </main>
+  <footer><span>Made for your everyday rhythm</span><span>✦</span><span id="saveStatus">Saved on this device</span></footer>
+</div>
+
+<dialog id="taskDialog">
+  <form method="dialog" id="taskForm">
+    <div class="dialog-head"><div><p class="eyebrow">MAKE IT HAPPEN</p><h2 id="dialogTitle">Add a task</h2></div><button type="button" id="closeDialog" class="icon-button" aria-label="Close">×</button></div>
+    <label for="taskTitle">Task</label><input id="taskTitle" maxlength="120" required placeholder="What do you need to do?">
+    <label for="taskDate">Date</label><input id="taskDate" type="date" required>
+    <label for="taskCategory">Category</label><select id="taskCategory"><option>Work</option><option>Study</option><option>Personal</option><option>Wellbeing</option><option>Errands</option></select>
+    <div class="dialog-actions"><button type="button" id="cancelTask" class="secondary-button">Cancel</button><button type="submit" class="primary-button">Save task</button></div>
+  </form>
+</dialog>
+<div id="toast" class="toast" role="status"></div>
+<script src="app.js"></script>
+</body>
+</html>

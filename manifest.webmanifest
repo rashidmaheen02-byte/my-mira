@@ -1,0 +1,18 @@
+{
+  "name": "My Daily Space \u2014 Tasks, Calendar & Salah",
+  "short_name": "Daily Space",
+  "description": "A personal planner with tasks, weekly review and a five-prayer checklist.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f6f7f3",
+  "theme_color": "#183f35",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
