@@ -4,3 +4,46 @@
 @media(min-width:700px){.app-shell{padding:38px 32px}.topbar{margin-bottom:32px}.stats-grid{gap:16px}.stat-card{padding:20px}.main-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:20px}.prayer-panel{margin-top:24px}.task-list{gap:10px}.task-row{padding:16px}.panel{padding:23px}.prayer-item{padding:16px 8px}}@media(max-width:430px){.app-shell{padding:20px 14px}.stat-card{padding:12px 10px;border-radius:15px}.stat-card strong{font-size:22px}.stat-card>span:last-child{font-size:10px}.section-heading h2{font-size:20px}.section-heading{align-items:flex-start}.primary-button{padding:11px 12px}.prayer-list{gap:5px}.prayer-name{font-size:11px}.prayer-item{padding:12px 2px}.week-strip{gap:4px}.day-chip{padding:10px 2px}.review-grid{gap:6px}.mini-stat{padding:13px 9px}.mini-stat strong{font-size:20px}}
 
 .auth-panel{margin:0 0 20px}.auth-panel label{display:block;font-size:12px;font-weight:700;margin:12px 0 6px}.auth-panel input{width:100%;border:1px solid var(--line);background:#fbfcfa;border-radius:11px;padding:12px;color:var(--ink)}.auth-actions{display:flex;gap:9px;margin-top:13px;flex-wrap:wrap}.auth-actions button{flex:1}.auth-message{font-size:12px;color:var(--forest2);margin:8px 0}.calendar-controls{display:flex;justify-content:space-between;align-items:center;gap:10px;margin:12px 0 16px}.view-switch{display:flex;background:#e9ede7;border-radius:11px;padding:4px;gap:3px}.mode-button{border:0;background:transparent;border-radius:8px;padding:9px 14px;font-size:12px;font-weight:700;color:var(--muted)}.mode-button.active{background:white;color:var(--forest)}.calendar-nav{display:flex;gap:6px}.month-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:4px}.month-weekday{text-align:center;color:var(--muted);font-size:10px;padding:7px 0}.month-day{border:1px solid var(--line);border-radius:9px;background:white;min-height:48px;padding:6px 2px;display:flex;flex-direction:column;align-items:center;gap:5px;color:var(--ink)}.month-day.outside{opacity:.4}.month-day.selected{background:var(--forest);color:white}.month-day.today:not(.selected){border-color:#75a58e}.month-day-number{font-size:12px;font-weight:600}.month-dots{display:flex;gap:3px;min-height:5px}.month-dots i{width:4px;height:4px;border-radius:50%;background:#d4a75b}.month-day.selected .month-dots i{background:white}@media(max-width:430px){.calendar-controls{align-items:flex-start;flex-direction:column}.calendar-nav{width:100%}.calendar-nav button{flex:1}.month-grid{gap:3px}.month-day{min-height:42px}}
+
+
+/* My Mira checkbox fix: prevent the global input width rule from stretching task checkboxes. */
+.task-row input.check.task-check {
+  appearance: none;
+  -webkit-appearance: none;
+  box-sizing: border-box;
+  width: 22px !important;
+  min-width: 22px;
+  max-width: 22px;
+  height: 22px;
+  flex: 0 0 22px;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  border: 1.5px solid #c4d0c7;
+  border-radius: 7px;
+  background: #fff;
+}
+
+.task-row input.check.task-check:checked {
+  background: var(--forest2);
+  border-color: var(--forest2);
+}
+
+.task-row input.check.task-check:checked::after {
+  content: "";
+  position: absolute;
+  width: 5px;
+  height: 10px;
+  top: 2px;
+  left: 7px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.task-row input.check.task-check:focus-visible {
+  outline: 3px solid #8db9a7;
+  outline-offset: 2px;
+}
