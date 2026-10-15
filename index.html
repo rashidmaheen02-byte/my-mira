@@ -14,6 +14,8 @@
 </head>
 <body>
 <div class="app-shell">
+<section class="panel sync-panel"><div class="section-heading compact"><div><p class="eyebrow">YOUR DEVICES</p><h2>Private sync</h2><p class="sub">Pair your devices once to keep your planner in sync.</p></div><span class="pill" id="syncStatus">On this device</span></div><div class="sync-actions"><button id="pairDeviceBtn" class="secondary-button">Connect / pair device</button><button id="syncNowBtn" class="secondary-button">Sync now</button></div><div id="pairControls" class="hidden"><label for="pairCode">Private pairing code</label><input id="pairCode" autocomplete="off" spellcheck="false" placeholder="Paste code from your other device"><div class="sync-actions"><button id="createPairBtn" class="primary-button">Create new planner code</button><button id="connectPairBtn" class="secondary-button">Connect with code</button></div><p class="small-note">Create a code on your first device, then enter the same code on your second device. Keep it private; anyone with this code can access your planner.</p></div><p id="syncMessage" class="small-note" role="status"></p></section>
+
   <header class="topbar">
     <div><p class="eyebrow" id="dateLabel">YOUR PERSONAL PLANNER</p><h1>My daily space<span>·</span></h1><p class="sub">A little progress, every day.</p></div>
     <button id="installHelp" class="icon-button" aria-label="Install app" title="Install app">＋</button>
@@ -71,6 +73,7 @@
   </form>
 </dialog>
 <div id="toast" class="toast" role="status"></div>
+<script src="config.js"></script>
 <script src="app.js"></script>
 </body>
 </html>
